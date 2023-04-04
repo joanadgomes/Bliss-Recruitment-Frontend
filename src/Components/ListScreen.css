@@ -1,0 +1,35 @@
+.listscreen {
+    background-color: rgb(223, 220, 220);
+    text-align: center;
+}
+
+.question {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-details {
+    text-decoration: none;
+    padding: 5px 20px;
+    margin-left: 10px;
+    color: black;
+}
+
+.question-details:hover {
+    color: rgba(0, 0, 0, 0.618);
+}
+
+.refresh-button {
+    border: none;
+    padding: 10px 20px;
+    margin: 50px;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+}
+
+.refresh-button:hover {
+    background-color: rgba(0, 0, 0, 0.618);
+}

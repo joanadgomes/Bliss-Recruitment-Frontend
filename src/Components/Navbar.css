@@ -1,0 +1,15 @@
+nav {
+    margin: 0;
+    padding: 2vw;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: grey;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    color: black;
+}

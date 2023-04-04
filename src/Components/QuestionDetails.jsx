@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import './QuestionDetails.css'
+import ShareScreen from './ShareScreen';
 
 function QuestionDetails() {
     const [question, setQuestion] = useState(null)
@@ -23,15 +25,16 @@ function QuestionDetails() {
     }, [])
 
   return (
-    <div>
+    <div className='details'>
         {question && (
             <>
-            <h2>{question.question}</h2>
-            <img src={question.image_url} alt="" />
-            <h2>Published at: {question.published_at}</h2>
+            <h2 className='title-question'>{question.question}</h2>
+            <img src={question.image_url} alt={question.id} />
+            <h2 className='info'>Published at: {question.published_at.slice(0, 10)}</h2>
+            <ShareScreen />
             </>
         )}
-        <Link to="/listscreen">Back to the listing</Link>
+        <Link className='back-button' to="/questions">Back to the listing</Link>
     </div>
   )
 }

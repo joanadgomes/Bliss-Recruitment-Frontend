@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import './Search.css'
 
 function Search() {
     const [search, setSearch] = useState("");
@@ -18,10 +18,9 @@ function Search() {
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="search"></label>
-            <input type="text" placeholder='Search here' value={search} onChange={handleChange} />
-            <button type="submit">Search</button>
+        <form className='form-search' onSubmit={handleSubmit}>
+            <input className='input-search' type="text" placeholder='Search question' value={search} onChange={handleChange} />
+            <button className='button-search' type="submit">Search</button>
         </form>
     </div>
   )

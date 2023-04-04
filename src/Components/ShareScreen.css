@@ -1,0 +1,22 @@
+.share-form {
+    padding: 50px 0 10px 0;
+}
+
+.input-share {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.button-share {
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+}
+
+.button-share:hover {
+    background-color: rgba(0, 0, 0, 0.618);
+}

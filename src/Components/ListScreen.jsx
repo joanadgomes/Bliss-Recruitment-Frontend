@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Search from './Search';
 import { Link } from 'react-router-dom';
+import './ListScreen.css'
 
 function ListScreen() {
     const [list, setList] = useState([]);
@@ -13,7 +14,7 @@ function ListScreen() {
     // get the list of the questions
     const getListQuestions = async () => {
         try {
-            let response = await axios.get(`https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions?limit={limit}&offset={offset}&filter={filter}`);
+            let response = await axios.get(`https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions?limit=${limit}&offset=${offset}&filter=${filter}`);
             setList(response.data);
         } catch (error) {
             console.log(error);
@@ -26,7 +27,7 @@ function ListScreen() {
 
     const handleRefreshQuestion = async () => {
         try {
-            let response = await axios.get(`https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions?limit={limit}&offset={offset}&filter={filter}`);
+            let response = await axios.get(`https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions?limit=${limit}&offset=${offset}&filter=${filter}`);
             setList(response.data);
         } catch (error) {
             console.log(error);
@@ -37,19 +38,18 @@ function ListScreen() {
         setFilter(search);
     }
 
-  return (
-    <div>
+  return ( 
+    <div className='listscreen'>
         <Search setSearch={handleSearch} />
 
         {list.map((question) => {
             return (
-                <div key={question._id}>
-                    <h2>{question.question}</h2>
-                    <Link to={`/questions/${question.id}`}>See details</Link>
+                <div className='question' key={question._id}>
+                    <Link className='question-details' to={`/questions/${question.id}`}><h2>{question.question}</h2></Link>
                 </div>
             )
         })}
-        <button onClick={() => handleRefreshQuestion()}>Refresh Questions</button>
+        <button className='refresh-button' onClick={() => handleRefreshQuestion()}>Refresh Questions</button>
     </div>
   )
 }
