@@ -54,4 +54,4 @@ function ListScreen() {
   )
 }
 
-export default ListScreen
+export default ListScreen;

@@ -39,9 +39,10 @@ function Homepage() {
 
   return (
     <div className='homepage'>
+      <h3>Welcome to</h3>
       <img className='logo-bliss' src={logo} alt="" />
-      <p>"Live it to feel it!"</p>
-      {loading && <p>Checking health status...</p>}
+      <h4>Recruitment.</h4>
+      {loading && <p className='loader-container'></p>}
       {health.status && (
         <>
           {health.status === 'OK' ? <Link className='link-questions' to='/questions'>Ready to start? <span>Questions</span> </Link> : <button onClick={() => handleRefresh()}>Retry action</button> }
