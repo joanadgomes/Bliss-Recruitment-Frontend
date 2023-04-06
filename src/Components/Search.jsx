@@ -11,6 +11,7 @@ function Search() {
         setFilter(e.target.value);
     }
 
+    // after submit, clean the search
     const handleSubmit = e => {
         e.preventDefault();
         setSearch("");
@@ -26,4 +27,4 @@ function Search() {
   )
 }
 
-export default Search
+export default Search;

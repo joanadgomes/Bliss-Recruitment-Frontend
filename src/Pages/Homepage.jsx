@@ -25,6 +25,7 @@ function Homepage() {
     getHealth();
   }, []);
 
+  // refresh de page in the status is NOT OK
   const handleRefresh = async () => {
     try {
         let response = await axios.get(

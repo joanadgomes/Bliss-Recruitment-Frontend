@@ -15,6 +15,7 @@ function ShareScreen() {
         }
     }
 
+    // clean the input after sharing
     const handleShare = (e) => {
         e.preventDefault();
         shareUrl();
