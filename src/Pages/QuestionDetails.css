@@ -14,7 +14,7 @@
     text-align: center;
     font-size: 2rem;
     color: black;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .info {
@@ -34,4 +34,20 @@
 
 .back-button:hover {
     background-color: rgba(0, 0, 0, 0.618);
+}
+
+.votes h2 {
+    font-size: 1rem;
+}
+
+.votes button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.votes button:hover {
+    background-color: black;
+    color: white;
 }

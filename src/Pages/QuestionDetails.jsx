@@ -27,14 +27,9 @@ function QuestionDetails() {
 
 
   // update the vote
-  const handleVote = (choice) => async (e) => {
-    e.preventDefault();
-    const updateQuestion = {...question,
-        choices: question.choices.map(element => element.choice.votes === element.votes + 1)}
-    
+  const handleVote = async () => {
     try {
-        const response = await axios.put(
-        `https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions/${id}`, updateQuestion);
+        const response = await axios.put(`https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions/${id}`);
         setQuestion(response.data);
     } catch (error) {
         console.log(error);
@@ -46,18 +41,16 @@ function QuestionDetails() {
     <div className="details">
       {question && (
         <>
-          <h2 className="title-question">{question.question}</h2>
           <img src={question.image_url} alt={question.id} />
-          <h2 className="info">
-            Published at: {question.published_at.slice(0, 10)}
-          </h2>
+          <h2 className="info">Published at: {question.published_at.slice(0, 10)}</h2>
+          <h2 className="title-question">{question.question}</h2>
           <p>
             {question.choices.map((choice) => {
               return (
-                <div key={question._id}>
-                  <p>{choice.choice}</p>
+                <div className='votes' key={question._id}>
+                  <h2>{choice.choice}</h2>
                   <p>Total votes: {choice.votes}</p>
-                  <button onClick={() => handleVote(choice)}>Vote</button>
+                  <button onClick={() => handleVote()}>Vote</button>
                 </div>
               ); 
             })}
