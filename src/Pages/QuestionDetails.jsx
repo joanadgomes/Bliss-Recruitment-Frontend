@@ -14,8 +14,7 @@ function QuestionDetails() {
   const getQuestion = async () => {
     try {
       const response = await axios.get(
-        `https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions/${id}`
-      );
+        `https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions/${id}`);
       setQuestion(response.data);
     } catch (error) {
       console.log(error);
@@ -31,8 +30,8 @@ function QuestionDetails() {
   const handleVote = (choice) => async (e) => {
     e.preventDefault();
     const updateQuestion = {...question,
-        choices: question.choices.map(element => element.choice === choice.choice ? {...element, votes: element.votes + 1} : element)
-    }
+        choices: question.choices.map(element => element.choice.votes === element.votes + 1)}
+    
     try {
         const response = await axios.put(
         `https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions/${id}`, updateQuestion);
@@ -67,9 +66,7 @@ function QuestionDetails() {
         </>
       )}
 
-      <Link className="back-button" to="/questions">
-        Back to the listing
-      </Link>
+      <Link className="back-button" to="/questions">Back to the listing</Link>
     </div>
   );
 }

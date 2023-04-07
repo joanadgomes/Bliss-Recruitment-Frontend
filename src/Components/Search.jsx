@@ -5,6 +5,7 @@ function Search() {
     const [search, setSearch] = useState("");
     const [filter, setFilter] = useState("");
 
+    // to read the changes in the search bar:
     const handleChange = (e) => {
         e.preventDefault();
         setSearch(e.target.value);

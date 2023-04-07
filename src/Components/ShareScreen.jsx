@@ -22,6 +22,7 @@ function ShareScreen() {
         setEmail('');
     }
 
+    // to read the changes in the input:
     const handleChangeShare = (e) => {
         e.preventDefault();
         setEmail(e.target.value);

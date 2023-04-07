@@ -31,8 +31,7 @@ function ListScreen() {
   const handleRefreshQuestion = async () => {
     try {
       let response = await axios.get(
-        `https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions?limit=${limit}&offset=${offset}&filter=${filter}`
-      );
+        `https://private-a7278-blissrecruitmentapi.apiary-mock.com/questions?limit=${limit}&offset=${offset}&filter=${filter}`);
       setList(response.data);
     } catch (error) {
       console.log(error);
@@ -57,12 +56,7 @@ function ListScreen() {
       })}
       ;
       <ShareScreen />
-      <button
-        className="refresh-button"
-        onClick={() => handleRefreshQuestion()}
-      >
-        Refresh Questions
-      </button>
+      <button className="refresh-button" onClick={() => handleRefreshQuestion()}>Refresh Questions</button>
     </div>
   );
 }
